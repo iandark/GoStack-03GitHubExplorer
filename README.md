@@ -5,3 +5,4 @@
     *   Eslint
     *   Prettier
     *   Editor config
+*   Configuração de rotas utilizando react-router-dom
