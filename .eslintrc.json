@@ -48,7 +48,15 @@
         "tsx": "never"
       }
     ],
-    "prettier/prettier": "error"
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "prettier/prettier": "error",
+    "camelcase": "off",
+    "@typescript-eslint/camelcase": ["warn"],
   },
   "settings": {
     "import/resolver": {
