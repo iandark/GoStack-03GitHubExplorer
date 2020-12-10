@@ -6,3 +6,6 @@
     *   Prettier
     *   Editor config
 *   Configuração de rotas utilizando react-router-dom
+*   Estilização utilizando Styled-Components
+*   Conectar a API utilizando axios
+*   Utilização do hook useState para gerenciar lista de repositórios
