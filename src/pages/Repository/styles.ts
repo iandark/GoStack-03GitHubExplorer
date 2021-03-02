@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Header = styled.header`
   display: flex;
   align-items: center;
@@ -9,7 +8,7 @@ export const Header = styled.header`
   a {
     display: flex;
     align-items: center;
-    text-decoration:none;
+    text-decoration: none;
     color: #a8a8b3;
     transition: color 0.2s;
 
@@ -98,7 +97,7 @@ export const Issues = styled.div`
     div {
       margin-left: 0 16px;
       color: #3d3d4d;
-      flex:1;
+      flex: 1;
 
       strong {
         font-size: 20px;

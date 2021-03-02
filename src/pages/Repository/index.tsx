@@ -1,8 +1,8 @@
-import React, { useEffect, useState }from 'react';
-import {useRouteMatch, Link} from 'react-router-dom';
-import logoImg from '../../assets/logo.svg';
-import {Header, RepositoryInfo, Issues} from './styles';
+import React, { useEffect, useState } from 'react';
+import { useRouteMatch, Link } from 'react-router-dom';
 import { FiChevronsLeft, FiChevronRight } from 'react-icons/fi';
+import logoImg from '../../assets/logo.svg';
+import { Header, RepositoryInfo, Issues } from './styles';
 import api from '../../services/api';
 
 interface RepositoryParams {
@@ -24,10 +24,10 @@ interface Repository {
 interface Issue {
   title: string;
   id: number;
-  html_url:string;
+  html_url: string;
   user: {
     login: string;
-  }
+  };
 }
 
 const Repository: React.FC = () => {
@@ -35,11 +35,11 @@ const Repository: React.FC = () => {
   const [issues, setIssues] = useState<Issue[]>([]);
   const { params } = useRouteMatch<RepositoryParams>();
 
-  useEffect(()=> {
-    api.get(`/repos/${params.repository}`).then((response)=> {
+  useEffect(() => {
+    api.get(`/repos/${params.repository}`).then(response => {
       setRepository(response.data);
     });
-    api.get(`/repos/${params.repository}/issues`).then((response)=> {
+    api.get(`/repos/${params.repository}/issues`).then(response => {
       setIssues(response.data);
     });
   }, [params.repository]);
@@ -49,18 +49,21 @@ const Repository: React.FC = () => {
       <Header>
         <img src={logoImg} alt="Github explorer" />
         <Link to="/">
-        <FiChevronsLeft size={16}/>Voltar
+          <FiChevronsLeft size={16} />
+          Voltar
         </Link>
       </Header>
 
-      { repository && (
+      {repository && (
         <RepositoryInfo>
           <header>
-            <img src={repository.owner.avatar_url} alt={repository.owner.login} />
+            <img
+              src={repository.owner.avatar_url}
+              alt={repository.owner.login}
+            />
             <div>
               <strong>{repository.full_name}</strong>
               <p>{repository.description}</p>
-
             </div>
           </header>
           <ul>
@@ -81,8 +84,13 @@ const Repository: React.FC = () => {
       )}
 
       <Issues>
-        {issues.map(issue=>(
-          <a key={issue.id} href={issue.html_url} target="_blank">
+        {issues.map(issue => (
+          <a
+            key={issue.id}
+            href={issue.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div>
               <strong>{issue.title}</strong>
               <p>{issue.user.login}</p>

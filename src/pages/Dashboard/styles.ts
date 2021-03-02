@@ -27,11 +27,12 @@ export const Form = styled.form<FormProps>`
     color: #3a3a3a;
     border: solid 2px #fff;
 
-    ${(props)=>props.hasError &&
-    css`
-      border-color: #c53030;
-      border-right: 0;
-    `}
+    ${props =>
+      props.hasError &&
+      css`
+        border-color: #c53030;
+        border-right: 0;
+      `}
 
     &::placeholder {
       color: #a8a8b3;
@@ -91,7 +92,7 @@ export const Repositories = styled.div`
     div {
       margin-left: 0 16px;
       color: #3d3d4d;
-      flex:1;
+      flex: 1;
 
       strong {
         font-size: 20px;
